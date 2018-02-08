@@ -38,6 +38,7 @@ coredomainWhitelist = {
         'postinstall_dexopt',
         'recovery',
         'system_server',
+        'modprobe',
         }
 coredomainWhitelist |= coreAppdomain
 
