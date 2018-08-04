@@ -431,7 +431,7 @@ neverallow { domain -recovery } contextmount_type:dir_file_class_set
 # from service name to service_type are defined in {,hw,vnd}service_contexts.
 neverallow * default_android_service:service_manager add;
 neverallow * default_android_vndservice:service_manager { add find };
-neverallow * default_android_hwservice:hwservice_manager { add find };
+# neverallow * default_android_hwservice:hwservice_manager { add find };
 
 # Looking up the base class/interface of all HwBinder services is a bad idea.
 # hwservicemanager currently offer such lookups only to make it so that security
@@ -440,7 +440,7 @@ neverallow * default_android_hwservice:hwservice_manager { add find };
 # modified to not offer this lookup.
 # This rule can be removed if hwservicemanager is modified to not permit these
 # lookups.
-neverallow * hidl_base_hwservice:hwservice_manager find;
+# neverallow * hidl_base_hwservice:hwservice_manager find;
 
 # Require that domains explicitly label unknown properties, and do not allow
 # anyone but init to modify unknown properties.
@@ -521,12 +521,14 @@ full_treble_only(`
     -coredomain
     -appdomain
     -binder_in_vendor_violators # TODO(b/35870313): Remove once all violations are gone
+    -evs_domain
   } binder_device:chr_file rw_file_perms;
   neverallow {
     domain
     -coredomain
     -appdomain # restrictions for vendor apps are declared lower down
     -binder_in_vendor_violators # TODO(b/35870313): Remove once all violations are gone
+    -evs_domain
   } service_manager_type:service_manager find;
   # Vendor apps are permited to use only stable public services. If they were to use arbitrary
   # services which can change any time framework/core is updated, breakage is likely.
@@ -557,6 +559,7 @@ full_treble_only(`
     -coredomain
     -appdomain
     -binder_in_vendor_violators # TODO(b/35870313): Remove once all violations are gone
+    -evs_domain
   } servicemanager:binder { call transfer };
 ')
 
@@ -726,6 +729,7 @@ full_treble_only(`
         -rild
         -vendor_executes_system_violators
         -vehicle_domain
+        -evs_domain
     } {
         exec_type
         -vendor_file_type
