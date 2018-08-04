@@ -132,6 +132,7 @@ attribute coredomain;
 attribute coredomain_socket;
 
 attribute vehicle_domain;
+attribute evs_domain;
 
 # All vendor domains which violate the requirement of not using Binder
 # TODO(b/35870313): Remove this once there are no violations
