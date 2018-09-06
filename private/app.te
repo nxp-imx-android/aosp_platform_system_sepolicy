@@ -11,6 +11,10 @@
 # Read system properties managed by zygote.
 allow appdomain zygote_tmpfs:file read;
 
+# Read from (but not create) system_server buffers transferred through
+# ashmem, e.g. battery stats.
+allow appdomain system_server_tmpfs:file read;
+
 # WebView and other application-specific JIT compilers
 allow appdomain self:process execmem;
 
