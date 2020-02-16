@@ -39,9 +39,6 @@ coredomainWhitelist = {
         'recovery',
         'system_server',
         'vendor_init',
-        'evs_app',
-        'evs_manager',
-        'hal_evs_driver',
         }
 coredomainWhitelist |= coreAppdomain
 
