@@ -551,6 +551,7 @@
 # to avoid restorecon conflicts
 /data/rollback/\d+/[^/]+/.*\.apk  u:object_r:apk_data_file:s0
 /data/rollback/\d+/[^/]+/.*\.apex u:object_r:staging_data_file:s0
+/data/fonts/files(/.*)?     u:object_r:font_data_file:s0
 
 # Misc data
 /data/misc/adb(/.*)?            u:object_r:adb_keys_file:s0
@@ -560,6 +561,7 @@
 /data/misc/apexdata/com\.android\.wifi(/.*)?    u:object_r:apex_wifi_data_file:s0
 /data/misc/apexrollback(/.*)?   u:object_r:apex_rollback_data_file:s0
 /data/misc/apns(/.*)?           u:object_r:radio_data_file:s0
+/data/misc/appcompat(/.*)?      u:object_r:appcompat_data_file:s0
 /data/misc/audio(/.*)?          u:object_r:audio_data_file:s0
 /data/misc/audioserver(/.*)?    u:object_r:audioserver_data_file:s0
 /data/misc/audiohal(/.*)?       u:object_r:audiohal_data_file:s0
