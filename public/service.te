@@ -40,6 +40,7 @@ type system_suspend_control_internal_service, service_manager_type;
 type system_suspend_control_service, service_manager_type;
 type update_engine_service,     service_manager_type;
 type update_engine_stable_service, service_manager_type;
+type virtualization_service,    service_manager_type;
 type virtual_touchpad_service,  service_manager_type;
 type vold_service,              service_manager_type;
 type vpnprofilestore_service,   service_manager_type;
@@ -241,8 +242,9 @@ type emergency_affordance_service, system_server_service, service_manager_type;
 ### HAL Services
 ###
 
-type hal_authsecret_service, vendor_service, protected_service, service_manager_type;
+type hal_audio_service, vendor_service, protected_service, service_manager_type;
 type hal_audiocontrol_service, vendor_service, service_manager_type;
+type hal_authsecret_service, vendor_service, protected_service, service_manager_type;
 type hal_face_service, vendor_service, protected_service, service_manager_type;
 type hal_fingerprint_service, vendor_service, protected_service, service_manager_type;
 type hal_gnss_service, vendor_service, protected_service, service_manager_type;
