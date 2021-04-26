@@ -1299,6 +1299,7 @@
 (typeattributeset default_android_vndservice_30_0 (default_android_vndservice))
 (typeattributeset default_prop_30_0 (
     default_prop
+    audio_config_prop
     build_config_prop
     suspend_prop
     init_service_status_private_prop
@@ -1377,7 +1378,10 @@
     dalvik_runtime_prop
     surfaceflinger_color_prop
     zram_control_prop))
-(typeattributeset exported2_vold_prop_30_0 (exported2_vold_prop vold_config_prop))
+(typeattributeset exported2_vold_prop_30_0
+  ( exported2_vold_prop
+    vold_config_prop
+    vold_post_fs_data_prop))
 (typeattributeset exported3_default_prop_30_0
   ( exported3_default_prop
     camera_calibration_prop
