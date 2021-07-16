@@ -324,10 +324,11 @@ persist.config.calibration_fac u:object_r:camera_calibration_prop:s0 exact strin
 
 config.disable_cameraservice u:object_r:camera_config_prop:s0 exact bool
 
-camera.disable_zsl_mode u:object_r:camera_config_prop:s0 exact bool
-camera.fifo.disable     u:object_r:camera_config_prop:s0 exact bool
-ro.camera.notify_nfc    u:object_r:camera_config_prop:s0 exact bool
-ro.camera.enableLazyHal u:object_r:camera_config_prop:s0 exact bool
+camera.disable_zsl_mode       u:object_r:camera_config_prop:s0 exact bool
+camera.fifo.disable           u:object_r:camera_config_prop:s0 exact bool
+ro.camera.notify_nfc          u:object_r:camera_config_prop:s0 exact bool
+ro.camera.enableLazyHal       u:object_r:camera_config_prop:s0 exact bool
+ro.camera.enableCamera1MaxZsl u:object_r:camera_config_prop:s0 exact bool
 
 ro.camerax.extensions.enabled u:object_r:camerax_extensions_prop:s0 exact bool
 
@@ -563,6 +564,7 @@ sys.usb.configfs   u:object_r:usb_control_prop:s0 exact int
 sys.usb.controller u:object_r:usb_control_prop:s0 exact string
 sys.usb.state      u:object_r:usb_control_prop:s0 exact string
 
+sys.usb.mtp.batchcancel u:object_r:usb_config_prop:s0 exact bool
 sys.usb.mtp.device_type u:object_r:usb_config_prop:s0 exact int
 
 sys.usb.config. u:object_r:usb_prop:s0
@@ -1146,6 +1148,9 @@ ro.zygote.disable_gl_preload u:object_r:zygote_config_prop:s0 exact bool
 
 # Broadcast boot stages, which keystore listens to
 keystore.boot_level u:object_r:keystore_listen_prop:s0 exact int
+
+# Property that tracks keystore crash counts during a boot cycle.
+keystore.crash_count u:object_r:keystore_crash_prop:s0 exact int
 
 partition.system.verified     u:object_r:verity_status_prop:s0 exact string
 partition.system_ext.verified u:object_r:verity_status_prop:s0 exact string
