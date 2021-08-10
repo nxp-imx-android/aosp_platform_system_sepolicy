@@ -169,6 +169,9 @@ ctl.restart$gsid        u:object_r:ctl_gsid_prop:s0
 # Restrict access to stopping apexd.
 ctl.stop$apexd          u:object_r:ctl_apexd_prop:s0
 
+# Restrict access to stopping odsign
+ctl.stop$odsign         u:object_r:ctl_odsign_prop:s0
+
 # Restrict access to starting media.transcoding.
 ctl.start$media.transcoding  u:object_r:ctl_mediatranscoding_prop:s0
 
@@ -514,6 +517,7 @@ ro.lmk.critical                 u:object_r:lmkd_config_prop:s0 exact int
 ro.lmk.critical_upgrade         u:object_r:lmkd_config_prop:s0 exact bool
 ro.lmk.debug                    u:object_r:lmkd_config_prop:s0 exact bool
 ro.lmk.downgrade_pressure       u:object_r:lmkd_config_prop:s0 exact int
+ro.lmk.filecache_min_kb         u:object_r:lmkd_config_prop:s0 exact int
 ro.lmk.kill_heaviest_task       u:object_r:lmkd_config_prop:s0 exact bool
 ro.lmk.kill_timeout_ms          u:object_r:lmkd_config_prop:s0 exact int
 ro.lmk.log_stats                u:object_r:lmkd_config_prop:s0 exact bool
